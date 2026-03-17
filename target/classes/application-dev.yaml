@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: example
+
+my:
+  custom:
+    property: Hello Sarbojit in dev environment
+
+
+#my:
+#  custom:
+#    property:
+#      int: 123

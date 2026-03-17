@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: example
+#  profiles:
+#    active: dev, test, custom
+
+my:
+  custom:
+    property: Hello Sarbojit
+
+#my:
+#  custom:
+#    property:
+#      int: 321
