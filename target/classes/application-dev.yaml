@@ -1,13 +1,41 @@
+# application-dev.yaml (used when "dev" profile is active)
+
 spring:
   application:
-    name: example
+    name: example # Name of the Spring Boot application
 
 my:
   custom:
     property: Hello Sarbojit in dev environment
+      # Custom property used in your application
+      # Injected in Java using:
+      # @Value("${my.custom.property}")
+
+# 🔑 HOW THIS WORKS:
+
+# - Spring loads this file when profile = "dev"
+#   (spring.profiles.active=dev)
+
+# - Properties defined here override default application.properties/yaml
+
+# - These values are available in:
+#   • @Value annotation
+#   • Environment object
+#   • @ConfigurationProperties (advanced)
+
+# 🔑 SERIALIZATION LINK (important concept)
+# - YAML → loaded into Spring Environment (key-value form)
+# - Then injected into Java fields (like deserialization of config)
+
 
 
 #my:
 #  custom:
 #    property:
 #      int: 123
+
+# This represents a nested structure:
+# my.custom.property.int = 123
+
+# To access this in Java:
+# @Value("${my.custom.property.int}")

@@ -1,13 +1,48 @@
+# application-test.yaml (used when "test" profile is active)
+
 spring:
   application:
-    name: example
+    name: example # Application name (same as dev, but can differ if needed)
 
 my:
   custom:
     property: Hello Sarbojit in test environment
+      # This value will be injected when "test" profile is active
+      # Used in Java via:
+      # @Value("${my.custom.property}")
+
+# 🔑 HOW PROFILE-SPECIFIC CONFIG WORKS:
+
+# - This file is loaded ONLY when:
+#   spring.profiles.active=test
+
+# - It overrides values from:
+#   application.yaml (default config)
+
+# - So if the same key exists in both:
+#   application.yaml → default
+#   application-test.yaml → override (higher priority)
+
+# 🔑 WHAT HAPPENS IN YOUR PROJECT:
+
+# In your main class:
+# app.setDefaultProperties("spring.profiles.active" = "test")
+
+# So Spring loads:
+# ✅ application-test.yaml
+# ❌ application-dev.yaml (ignored)
+
+# Therefore:
+# @Value("${my.custom.property}") →
+# "Hello Sarbojit in test environment"
 
 
 #my:
 #  custom:
 #    property:
 #      int: 123
+# Nested structure example:
+# my.custom.property.int = 123
+
+# Access in Java:
+# @Value("${my.custom.property.int}")

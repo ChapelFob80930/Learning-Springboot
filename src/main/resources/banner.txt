@@ -1,3 +1,8 @@
+# banner.txt
+
+# This file is used by Spring Boot to display a custom banner
+# when the application starts
+
 ███████╗ █████╗ ██████╗ ██████╗  ██████╗      ██╗██╗████████╗
 ██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔═══██╗     ██║██║╚══██╔══╝
 ███████╗███████║██████╔╝██████╔╝██║   ██║     ██║██║   ██║
@@ -5,3 +10,42 @@
 ███████║██║  ██║██║  ██║██████╔╝╚██████╔╝╚█████╔╝██║   ██║
 ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝  ╚═════╝  ╚════╝ ╚═╝   ╚═╝
 Sarbojit-Trying-Random-Shit              Spring boot 4.0.2
+
+# 🔑 WHAT THIS DOES:
+# - Displays a custom ASCII banner in the console at application startup
+# - Replaces the default Spring Boot banner
+
+# 🔑 WHERE IT SHOULD BE:
+# - Must be placed inside: src/main/resources/
+
+# 🔑 HOW SPRING USES IT:
+# - On startup, Spring automatically looks for "banner.txt"
+# - If found → prints it before logs start
+
+# 🔑 CUSTOMIZATION:
+
+# You can add dynamic values using placeholders:
+# Example:
+# ${spring.application.name}
+# ${spring-boot.version}
+
+# Example usage:
+# My App - ${spring.application.name}
+
+# 🔑 DISABLE BANNER:
+
+# In application.properties or yaml:
+# spring.main.banner-mode=off
+
+# OR programmatically:
+# app.setBannerMode(Banner.Mode.OFF);
+
+# 🔑 CHANGE LOCATION:
+
+# spring.banner.location=classpath:my-banner.txt
+
+# =========================================================
+# 🧠 ONE-LINER
+# =========================================================
+
+# "banner.txt customizes the startup console output of a Spring Boot application."
