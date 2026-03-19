@@ -1,14 +1,29 @@
-spring:
-  application:
-    name: example
-#  profiles:
-#    active: dev, test, custom
-
-my:
-  custom:
-    property: Hello Sarbojit
-
+#spring:
+#  application:
+#    name: example
+##  profiles:
+##    active: dev, test, custom
+#
 #my:
 #  custom:
-#    property:
-#      int: 321
+#    property: Hello Sarbojit
+#
+##my:
+##  custom:
+##    property:
+##      int: 321
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/demo_db
+    username: postgres
+    password: Jitpdx@742004
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
