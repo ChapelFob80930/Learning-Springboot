@@ -1,4 +1,4 @@
-package com.sarbo.example;
+package com.sarbo.example.school;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

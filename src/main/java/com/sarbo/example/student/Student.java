@@ -1,6 +1,8 @@
-package com.sarbo.example;
+package com.sarbo.example.student;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.sarbo.example.school.School;
+import com.sarbo.example.studentprofile.StudentProfile;
 import jakarta.persistence.*;
 
 @Entity

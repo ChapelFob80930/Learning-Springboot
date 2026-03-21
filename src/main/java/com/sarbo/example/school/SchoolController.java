@@ -1,4 +1,4 @@
-package com.sarbo.example;
+package com.sarbo.example.school;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,23 +10,23 @@ import java.util.List;
 @RestController
 public class SchoolController {
 
-    private final SchoolRepository schoolRepository;
+    private final SchoolService schoolService;
 
-    public SchoolController(SchoolRepository schoolRepository) {
-        this.schoolRepository = schoolRepository;
+    public SchoolController(SchoolService schoolService) {
+        this.schoolService = schoolService;
     }
 
     @PostMapping("/schools")
-    public School create(
-            @RequestBody School school
+    public SchoolDTO createSchool(
+            @RequestBody SchoolDTO dto
     ){
-        return schoolRepository.save(school);
+        return schoolService.createSchool(dto);
     }
+
 
     @GetMapping("/schools")
-    public List<School> findAll(){
-        return schoolRepository.findAll();
+    public List<SchoolDTO> findAll(){
+        return schoolService.findAllSchool();
     }
-
 
 }

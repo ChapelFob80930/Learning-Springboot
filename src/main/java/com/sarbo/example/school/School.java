@@ -1,6 +1,7 @@
-package com.sarbo.example;
+package com.sarbo.example.school;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.sarbo.example.student.Student;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
