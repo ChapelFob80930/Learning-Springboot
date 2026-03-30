@@ -24,7 +24,10 @@ public class StudentService {
     }
 
     public List<StudentResponseDTO> findAllStudent(){
-        return repository.findAll().stream().map(studentMapper::toStudentResponseDTO).collect(Collectors.toList());
+        return repository.findAll()
+                .stream()
+                .map(studentMapper::toStudentResponseDTO)
+                .collect(Collectors.toList());
     }
 
     public StudentResponseDTO findStudentById(Integer studentId)
